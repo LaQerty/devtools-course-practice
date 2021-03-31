@@ -6,15 +6,14 @@
 
 TEST(Lukianchenko_CoplexNumberTest, Sum_Test) {
     ComplexNumber num_0(1.0, 0.0);
-    ComplexNumber num_1(2.0, 3.0);
-    ComplexNumber num_2(4.0, 5.0);
+    ComplexNumber num_1(-2.0, 3.0);
+    ComplexNumber num_2(4.0, -5.0);
     ComplexNumber num_3(5.0, 4.0);
     ComplexNumber num_4(3.0, 2.0);
     ComplexNumber sum = num_0 + num_1 + num_2 + num_3 + num_4;
-    int k = 0;
-    if ( sum.getRe() > sum.getIm())
-        k = 1;
-    ASSERT_EQ(k, 1);
+    if (sum.getRe() > 0)
+        sum =- num_0 - num_1 - num_2 - num_3 - num_4;    
+    ASSERT_EQ(sum.getRe(), sum.getIm());
 }
 typedef testing::TestWithParam<std::tuple<double, double, double, double>>
     Lukianchenko_CoplexNumberTest_WithParam;
@@ -22,9 +21,12 @@ typedef testing::TestWithParam<std::tuple<double, double, double, double>>
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
-    bool f_flag = num_0 == num_1;
-    bool s_flag = num_0 != num_1;
-    ASSERT_NE(f_flag, s_flag);
+    bool f_flag;
+    if (!equalsZero(num_0)) {
+        if (num_0 != num_1)
+            flag=true;
+    }
+    ASSERT_NE(flag, false);
 }
 
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Multiplication_Division_Test) {
