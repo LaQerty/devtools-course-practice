@@ -11,11 +11,11 @@ TEST(Lukianchenko_CoplexNumberTest, Sum_Test) {
     ComplexNumber num_3(5.0, 4.0);
     ComplexNumber num_4(3.0, 2.0);
     ComplexNumber res(15.0, 14.0);
-    ComplexNumber sum = num_0+num_1+num_2+num_3+num_4;
-    int k=0;
-    if(sum.getRe()>sum.getIm())
-        k=1;
-    ASSERT_EQ(k,1);
+    ComplexNumber sum = num_0 + num_1 + num_2 + num_3 + num_4;
+    int k = 0;
+    if ( sum.getRe() > sum.getIm())
+        k = 1;
+    ASSERT_EQ(k, 1);
 }
 typedef testing::TestWithParam<std::tuple<double, double, double, double>>
     Lukianchenko_CoplexNumberTest_WithParam;
