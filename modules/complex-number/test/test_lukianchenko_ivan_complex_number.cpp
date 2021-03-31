@@ -10,7 +10,6 @@ TEST(Lukianchenko_CoplexNumberTest, Sum_Test) {
     ComplexNumber num_2(4.0, 5.0);
     ComplexNumber num_3(5.0, 4.0);
     ComplexNumber num_4(3.0, 2.0);
-    ComplexNumber res(15.0, 14.0);
     ComplexNumber sum = num_0 + num_1 + num_2 + num_3 + num_4;
     int k = 0;
     if ( sum.getRe() > sum.getIm())
@@ -40,9 +39,9 @@ TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Multiplication_Division_Test) {
 
 INSTANTIATE_TEST_CASE_P(/**/, Lukianchenko_CoplexNumberTest_WithParam,
     testing::Combine(
-        testing::Values(1.0, 2.0),
-        testing::Values(15.0, 4.0),
-        testing::Values(43.0, 334.0),
-        testing::Values(3.0, 4.0)
+        testing::Values(12.0, 2333.0),
+        testing::Values(-15.0, 456.0),
+        testing::Values(423.0, 0.0),
+        testing::Values(-23.0, 44.0)
 ));
 
