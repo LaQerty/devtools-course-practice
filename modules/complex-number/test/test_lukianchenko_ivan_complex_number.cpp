@@ -21,8 +21,8 @@ typedef testing::TestWithParam<std::tuple<double, double, double, double>>
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
-    bool f_flag;
-    if (!equalsZero(num_0)) {
+    bool flag;
+    if (equalsZero(num_0) == false) {
         if (num_0 != num_1)
             flag = true;
     }
