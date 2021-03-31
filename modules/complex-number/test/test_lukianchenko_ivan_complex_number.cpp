@@ -12,7 +12,7 @@ TEST(Lukianchenko_CoplexNumberTest, Sum_Test) {
     ComplexNumber num_4(3.0, 2.0);
     ComplexNumber sum = num_0 + num_1 + num_2 + num_3 + num_4;
     if (sum.getRe() > 0)
-        sum =- num_0 - num_1 - num_2 - num_3 - num_4;
+        sum = sum - num_0 - num_1 - num_2 - num_3 - num_4;
     ASSERT_EQ(sum.getRe(), sum.getIm());
 }
 typedef testing::TestWithParam<std::tuple<double, double, double, double>>
@@ -21,8 +21,8 @@ typedef testing::TestWithParam<std::tuple<double, double, double, double>>
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
-    bool flag;
-    if (equalsZero(num_0) == false) {
+    bool flag = equalsZero(num_0);
+    if (flag == false) {
         if (num_0 != num_1)
             flag = true;
     }
