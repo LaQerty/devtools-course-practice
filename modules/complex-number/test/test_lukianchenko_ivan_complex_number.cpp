@@ -1,0 +1,48 @@
+// Copyright 2021 Lukianchencko Ivan
+
+#include <gtest/gtest.h>
+#include <tuple>
+#include "include/complex_number.h"
+
+TEST(Lukianchenko_CoplexNumberTest, Sum_Test) {
+    ComplexNumber num_0(1.0, 0.0);
+    ComplexNumber num_1(2.0, 3.0);
+    ComplexNumber num_2(4.0, 5.0);
+    ComplexNumber num_3(5.0, 4.0);
+    ComplexNumber num_4(3.0, 2.0);
+    ComplexNumber res(15.0, 14.0);
+    ComplexNumber sum = num_0+num_1+num_2+num_3+num_4;
+    int k=0;
+    if(sum.getRe()>sum.getIm())
+        k=1;
+    ASSERT_EQ(k,1);
+}
+typedef testing::TestWithParam<std::tuple<double, double, double, double>>
+    Lukianchenko_CoplexNumberTest_WithParam;
+
+TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
+    ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
+    ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
+    bool f_flag = num_0 == num_1;
+    bool s_flag = num_0 != num_1;
+    ASSERT_NE(f_flag, s_flag);
+}
+
+TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Multiplication_Division_Test) {
+    ComplexNumber num_0(std::get<0>(GetParam()), std::get<2>(GetParam()));
+    ComplexNumber num_1(num_0.getIm(), num_0.getRe());
+    ComplexNumber res_0 = num_0 *num_1;
+    ComplexNumber num_2(res_0.getIm(), res_0.getRe());
+    ComplexNumber res_1 = res_0/num_2;
+    ComplexNumber res_test(0.0, 1.0);
+    ASSERT_EQ(res_1, res_test);
+}
+
+INSTANTIATE_TEST_CASE_P(/**/, Lukianchenko_CoplexNumberTest_WithParam,
+    testing::Combine(
+        testing::Values(1.0, 2.0),
+        testing::Values(15.0, 4.0),
+        testing::Values(43.0, 334.0),
+        testing::Values(3.0, 4.0)
+));
+
