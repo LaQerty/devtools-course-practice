@@ -23,8 +23,8 @@ TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_1(num_0);
     ComplexNumber num_2(std::get<2>(GetParam()), std::get<3>(GetParam()));
     ComplexNumber num_3(num_2);
-    num_2 = num_2 - num_1 - num_0;
-    num_3 = num_3 - num_1 * 2;
+    num_2 = num_2 - num_0 - num_0;
+    num_3 = num_3 - (num_1 + num_1);
     ASSERT_EQ(num_2, num_3);
 }
 
