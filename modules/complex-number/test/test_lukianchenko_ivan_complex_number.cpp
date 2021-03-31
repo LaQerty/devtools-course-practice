@@ -22,7 +22,7 @@ TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
     bool flag = false;
-    num_0=num_1;
+    num_0 = num_1;
     if (num_0 != num_1)
         flag = true;
     ASSERT_NE(flag, true);
