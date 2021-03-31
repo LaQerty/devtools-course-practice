@@ -21,12 +21,11 @@ typedef testing::TestWithParam<std::tuple<double, double, double, double>>
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Bool_Test) {
     ComplexNumber num_0(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber num_1(std::get<2>(GetParam()), std::get<3>(GetParam()));
-    bool flag = equalsZero(num_0);
-    if (flag == false) {
-        if (num_0 != num_1)
-            flag = true;
-    }
-    ASSERT_NE(flag, false);
+    bool flag = false;
+    num_0=num_1;
+    if (num_0 != num_1)
+        flag = true;
+    ASSERT_NE(flag, true);
 }
 
 TEST_P(Lukianchenko_CoplexNumberTest_WithParam, Multiplication_Division_Test) {
