@@ -19,7 +19,7 @@ TEST(number_to_word, test_ten) {
     num_to_word n(13);
     n.num2word();
     std::string res = n.get_word();
-    ASSERT_EQ(res, res);
+    ASSERT_EQ(res, "thirteen");
 }
 
 TEST(number_to_word, test_hundred) {
