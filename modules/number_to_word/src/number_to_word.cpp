@@ -7,10 +7,16 @@ num_to_word::num_to_word(int n) {
 }
 
 void num_to_word::num2word() {
-    const char* third[10] = { " ","one hundred ", "two hundred ", "three hundred ", "four hundred ", "five hundred ", "six hundred ", "seven hundred ", "eight hundred ","nine hundred " };
-    const char* second1[10] = { "ten", "eleven", "twelve", "thirteen", "fourteen", "fiveteen", "sixteen", "seventeen", "eigthteen", "nineteen" };
-    const char* second2[10] = { " ", " ", "twenty ", "thirty ", "fourty ", "fifty ", "sixty ", "seventy ", "eigthty ", "ninety " };
-    const char* first[10] = { "", "one", "two", "three", "four", "five", "six", "seven", "eigth", "nine" };
+    const char* third[10] = { " ", "one hundred ", "two hundred ", 
+    "three hundred ", "four hundred ", "five hundred ", "six hundred ", 
+    "seven hundred ", "eight hundred ", "nine hundred " };
+    const char* second1[10] = { "ten", "eleven", "twelve", 
+    "thirteen", "fourteen", "fiveteen", "sixteen", 
+    "seventeen", "eigthteen", "nineteen" };
+    const char* second2[10] = { " ", " ", "twenty ", "thirty ", 
+    "fourty ", "fifty ", "sixty ", "seventy ", "eigthty ", "ninety " };
+    const char* first[10] = { "", "one", "two", "three",
+     "four", "five", "six", "seven", "eigth", "nine" };
     int i = 0;
     int k = num;
     while (k != 0) {
