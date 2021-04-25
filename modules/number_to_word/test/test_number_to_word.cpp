@@ -35,3 +35,10 @@ TEST(number_to_word, first_thousand) {
     std::string res = n.get_word();
     ASSERT_EQ(res, "twenty  thousand two hundred thirty two");
 }
+
+TEST(number_to_word, first_thousand1) {
+    num_to_word n(121232);
+    n.num2word();
+    std::string res = n.get_word();
+    ASSERT_EQ(res, "one hundred twenty one thousand two hundred thirty two");
+}
