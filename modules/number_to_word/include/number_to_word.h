@@ -6,11 +6,11 @@
 #include <string>
 
 class num_to_word {
-private: 
+ private:
     int num;
     std::string word;
-public: 
-    num_to_word(int n):num(n);
+ public:
+    num_to_word(int n) : num(n) {};
     void num2word();
     std::string get_word();
 };

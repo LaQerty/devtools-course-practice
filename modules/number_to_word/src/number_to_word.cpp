@@ -1,5 +1,6 @@
 // Copyright 2021 Lukyanchenko Ivan
 
+#include <string>
 #include "include/number_to_word.h"
 
 void num_to_word::num2word() {
@@ -22,7 +23,7 @@ void num_to_word::num2word() {
     while (i != 0) {
         if (i == 6) {
             word += third[num / 100000];
-            if (num / 100000 !=0){
+            if (num / 100000 !=0) {
                 word += " thousand ";
             }
             num %= 100000;
@@ -31,7 +32,7 @@ void num_to_word::num2word() {
         if ((i == 5) && (num / 10000 == 1)) {
             word += second1[(num / 1000)%10];
             word += "thousand ";
-            num %= 10000; 
+            num %= 10000;
             num %= 1000;
             i -= 2;
         }
@@ -57,7 +58,7 @@ void num_to_word::num2word() {
             word += second1[num % 10];
             break;
         }
-        if((i == 2) && (num / 10 != 1)) {
+        if ((i == 2) && (num / 10 != 1)) {
             word += second2[num / 10];
             num %= 10;
             i--;
@@ -72,5 +73,3 @@ void num_to_word::num2word() {
 std::string num_to_word::get_word() {
     return word;
 }
-
-  
