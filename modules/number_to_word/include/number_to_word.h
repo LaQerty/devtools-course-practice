@@ -10,7 +10,7 @@ class num_to_word {
     int num;
     std::string word;
  public:
-    num_to_word(int n) : num(n) {};
+    explicit num_to_word(int n) : num(n) {}
     void num2word();
     std::string get_word();
 };
