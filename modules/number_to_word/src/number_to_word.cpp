@@ -23,7 +23,7 @@ void num_to_word::num2word() {
     while (i != 0) {
         if (i == 6) {
             word += third[num / 100000];
-            if((num / 10000 == 0)&&(num / 1000 == 0)){
+            if ((num / 10000 == 0) && (num / 1000 == 0)) {
                 if (num / 100000 != 0) {
                     word += " thousand ";
                 }
