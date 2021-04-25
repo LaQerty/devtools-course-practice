@@ -12,7 +12,7 @@ class num_to_word {
  public:
     explicit num_to_word(int n) : num(n) {}
     void num2word();
-    std::string get_word();
+    std::string get_word() const;
 };
 
 #endif  // MODULES_NUMBER_TO_WORD_INCLUDE_NUMBER_TO_WORD_H_
