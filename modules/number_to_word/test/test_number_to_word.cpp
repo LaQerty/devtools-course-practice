@@ -75,11 +75,11 @@ TEST(number_to_word, test_million1) {
 }
 
 TEST(number_to_word, first_million2) {
-    num_to_word n(211112312);
+    num_to_word n(221112312);
     n.num2word();
     std::string res = n.get_word();
     std::string res1;
-    res1 += "two hundred eleven  million one";
+    res1 += "two hundred twenty one million one";
     res1 += " hundred twelve thousand three hundred twelve ";
     ASSERT_EQ(res, res1);
 }
