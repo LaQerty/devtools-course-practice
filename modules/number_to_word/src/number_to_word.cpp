@@ -46,7 +46,8 @@ void num_to_word::num2word() {
         }
         if (i == 6) {
             word += third[num / 100000];
-            if (((num % 100000) / 10000 == 0) && ((num % 10000) / 1000 == 0) && (num / 100000 != 0)) {
+            if (((num % 100000) / 10000 == 0) &&
+                ((num % 10000) / 1000 == 0) && (num / 100000 != 0)) {
                 word += "thousand ";
             }
             num %= 100000;
@@ -96,6 +97,6 @@ void num_to_word::num2word() {
     }
 }
 
-std::string num_to_word::get_word() const{
+std::string num_to_word::get_word() const {
     return word;
 }
