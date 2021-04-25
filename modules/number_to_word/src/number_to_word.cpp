@@ -1,31 +1,25 @@
 // Copyright 2021 Lukyanchenko Ivan
 
 #include "include/number_to_word.h"
-num_to_word::num_to_word(int n) {
-    num = n;
-    word = "";
-}
 
 void num_to_word::num2word() {
-    const char* third[10] = { " ", "one hundred ", "two hundred ", 
-    "three hundred ", "four hundred ", "five hundred ", "six hundred ", 
+    const char* third[10] = { " ", "one hundred ", "two hundred ",
+    "three hundred ", "four hundred ", "five hundred ", "six hundred ",
     "seven hundred ", "eight hundred ", "nine hundred " };
-    const char* second1[10] = { "ten", "eleven", "twelve", 
-    "thirteen", "fourteen", "fiveteen", "sixteen", 
+    const char* second1[10] = { "ten", "eleven", "twelve",
+    "thirteen", "fourteen", "fiveteen", "sixteen",
     "seventeen", "eigthteen", "nineteen" };
-    const char* second2[10] = { " ", " ", "twenty ", "thirty ", 
+    const char* second2[10] = { " ", " ", "twenty ", "thirty ",
     "fourty ", "fifty ", "sixty ", "seventy ", "eigthty ", "ninety " };
-    const char* first[10] = { "", "one", "two", "three",
+    const char* first[10] = { "", "one", "two", "three"
      "four", "five", "six", "seven", "eigth", "nine" };
     int i = 0;
     int k = num;
-    while (k != 0) {
+        while (k != 0) {
         k = k / 10;
         i++;
     }
-    while (i != 0)
-    {
-
+    while (i != 0) {
         if (i == 6) {
             word += third[num / 100000];
             if (num / 100000 !=0){
