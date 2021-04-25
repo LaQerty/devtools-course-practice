@@ -1,6 +1,7 @@
 // Copyright 2021 Lukyanchenko Ivan
 
 #include <gtest/gtest.h>
+#include <string>
 #include "include/number_to_word.h"
 
 
@@ -11,7 +12,7 @@ TEST(number_to_word, test_constructor) {
 TEST(number_to_word, test_get) {
     num_to_word n(1);
     std::string res = n.get_word();
-    ASSERT_EQ(res,"");
+    ASSERT_EQ(res, "");
 }
 
 TEST(number_to_word, test_ten) {
@@ -25,12 +26,12 @@ TEST(number_to_word, test_hundred) {
     num_to_word n(811);
     n.num2word();
     std::string res = n.get_word();
-    ASSERT_EQ(res,"eight hundred eleven");
+    ASSERT_EQ(res, "eight hundred eleven");
 }
 
 TEST(number_to_word, first_thousand) {
     num_to_word n(20232);
     n.num2word();
     std::string res = n.get_word();
-    ASSERT_EQ(res,"twenty  thousand two hundred thirty two");
+    ASSERT_EQ(res, "twenty  thousand two hundred thirty two");
 }
