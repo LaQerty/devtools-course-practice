@@ -39,3 +39,17 @@ add_test(
 set_tests_properties (${prefix}_big_count_test1 PROPERTIES
     PASS_REGULAR_EXPRESSION "Correctly"
     LABELS "${MODULE}")
+add_test(
+    NAME ${prefix}_zero_count
+    COMMAND ${APPLICATION} 0
+)
+set_tests_properties (${prefix}_zero_count PROPERTIES
+    PASS_REGULAR_EXPRESSION "Count must be positive!"
+    LABELS "${MODULE}")
+add_test(
+    NAME ${prefix}_witout_param
+    COMMAND ${APPLICATION} 
+)
+set_tests_properties (${prefix}_witout_param PROPERTIES
+    PASS_REGULAR_EXPRESSION "Wrong param format!"
+    LABELS "${MODULE}")

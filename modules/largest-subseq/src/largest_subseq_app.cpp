@@ -39,11 +39,11 @@ int parseInt(const char* arg) {
     double value = strtol(arg, &end, 0);
 
     if (end[0]) {
-        throw std::string("Wrong number format!");
+        throw std::string("Wrong param format!");
     }
 
     if (value <= 0) {
-        throw std::string("Number must be positive!");
+        throw std::string("Count must be positive!");
     }
 
     return value;
