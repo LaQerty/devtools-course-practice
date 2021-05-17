@@ -37,11 +37,6 @@ bool Lar_SubseqApp::validateNumberOfArguments(int argc, const char** argv) {
 int parseInt(const char* arg) {
     char* end;
     double value = strtol(arg, &end, 0);
-
-    if (end[0]) {
-        throw std::string("Wrong param format!");
-    }
-
     if (value <= 0) {
         throw std::string("Count must be positive!");
     }

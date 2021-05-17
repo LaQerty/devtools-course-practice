@@ -47,9 +47,9 @@ set_tests_properties (${prefix}_zero_count PROPERTIES
     PASS_REGULAR_EXPRESSION "Count must be positive!"
     LABELS "${MODULE}")
 add_test(
-    NAME ${prefix}_witout_param
-    COMMAND ${APPLICATION} 
+NAME ${prefix}_Check_Number_Of_Arguments
+COMMAND ${APPLICATION} 
 )
-set_tests_properties (${prefix}_witout_param PROPERTIES
-    PASS_REGULAR_EXPRESSION "Wrong param format!"
-    LABELS "${MODULE}")
+set_tests_properties (${prefix}_Check_Number_Of_Arguments PROPERTIES
+PASS_REGULAR_EXPRESSION "Should be 2 arguments."
+LABELS "${MODULE}")
