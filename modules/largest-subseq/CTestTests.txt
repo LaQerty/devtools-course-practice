@@ -53,3 +53,10 @@ COMMAND ${APPLICATION}
 set_tests_properties (${prefix}_Check_Number_Of_Arguments PROPERTIES
 PASS_REGULAR_EXPRESSION "Should be 2 arguments."
 LABELS "${MODULE}")
+add_test(
+    NAME ${prefix}_one_count
+    COMMAND ${APPLICATION} 1
+)
+set_tests_properties (${prefix}_one_count PROPERTIES
+    PASS_REGULAR_EXPRESSION "Uncorrectly"
+    LABELS "${MODULE}")
