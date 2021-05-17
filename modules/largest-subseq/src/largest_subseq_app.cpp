@@ -16,8 +16,8 @@ Lar_SubseqApp::Lar_SubseqApp() : message_("") {}
 void Lar_SubseqApp::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
-        "This is a check of the longest subsequence search," +
-        "among a randomly given sequence.\n\n" +
+        "This is a check of the longest subsequence search," \
+        "among a randomly given sequence.\n\n" \
         "Please provide arguments in the following format:\n$"
         + appname + "count . \n\n"
         + "The argument is the length of the generated sequence\n\n" \
@@ -37,6 +37,7 @@ bool Lar_SubseqApp::validateNumberOfArguments(int argc, const char** argv) {
 int parseInt(const char* arg) {
     char* end;
     double value = strtol(arg, &end, 0);
+
     if (value <= 0) {
         throw std::string("Count must be positive!");
     }
@@ -67,9 +68,12 @@ std::string Lar_SubseqApp::operator()(int argc, const char** argv) {
     std::vector<int> first;
     first = get_rand_vec(count);
     Sequential a(first);
-    std::string res = a.getLargSubseq(first);
+    std::vector<int> res = a.getLargSubseq(first);
     stream.str("");
-    stream << res;
+    if (res[0] == res[1] ) {
+        stream << "Correctly";
+    } else { stream << "Uncorrectly"; }
+    
     message_ = stream.str();
     return message_;
 }

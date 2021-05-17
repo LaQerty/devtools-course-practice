@@ -86,12 +86,13 @@ std::vector<int> Sequential::findLargSubseqN2(std::vector <int> fSec) {
     return answer;
 }
 
-std::string Sequential::getLargSubseq(std::vector<int> m_seq) {
+std::vector<int> Sequential::getLargSubseq(std::vector<int> m_seq) {
     std::vector<int> ans1;
     std::vector<int> ans2;
+    std::vector<int> res;
     ans1 = findLargSubseqN2(m_seq);
     ans2 = findLargSubseqNlogN(m_seq);
-    if ( ans2.size() == ans1.size() ) {
-        return "Correctly";
-    } else { return "Uncorrectly"; }
+    res.push_back(ans1.size());
+    res.push_back(ans2.size());
+    return res;
 }
