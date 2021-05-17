@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+#include <vector>
 #include <ctime>
 #include <random>
 #include <sstream>
@@ -48,8 +49,6 @@ int parseInt(const char* arg) {
     return value;
 }
 std::vector<int> get_rand_vec(int size) {
-    if (size <= 0)
-        throw std::invalid_argument("Error size of matrix");
     std::mt19937 gen;
     gen.seed(static_cast<int>(time(0)));
     std::vector<int> res(size);
