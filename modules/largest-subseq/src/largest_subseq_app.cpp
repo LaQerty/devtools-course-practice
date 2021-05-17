@@ -70,10 +70,9 @@ std::string Lar_SubseqApp::operator()(int argc, const char** argv) {
     Sequential a(first);
     std::vector<int> res = a.getLargSubseq(first);
     stream.str("");
-    if (res[0] == res[1] ) {
+    if ( res[0] == res[1] ) {
         stream << "Correctly";
     } else { stream << "Uncorrectly"; }
-    
     message_ = stream.str();
     return message_;
 }
